@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class GetTextVSGetAttribute {
+public class S_06GetTextVSGetAttribute {
 
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
@@ -30,7 +30,7 @@ public class GetTextVSGetAttribute {
 		System.out.println(value);
 		
 		
-		//getText() will return the inner text in element and getAttribute() will return the attribute value ;
+		//getText() will return the inner text in element and getAttribute() will return the attribute value both return type will string
 		WebElement login=driver.findElement(By.xpath("//button[normalize-space()='Log in']"));
 		System.out.println(login.getText());
 		System.out.println(login.getAttribute("type"));

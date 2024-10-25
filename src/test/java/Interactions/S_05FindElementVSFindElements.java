@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class FindElementVSFindElements {
+public class S_05FindElementVSFindElements {
 
 	public static void main(String[] args) {
 		

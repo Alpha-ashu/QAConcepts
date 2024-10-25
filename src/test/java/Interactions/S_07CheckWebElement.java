@@ -4,12 +4,13 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class NavigationMethods {
+public class S_07CheckWebElement {
 
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
@@ -21,18 +22,13 @@ public class NavigationMethods {
         WebDriver driver = new ChromeDriver(option);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://demo.nopcommerce.com/");
         
-        driver.navigate().to("https://demo.nopcommerce.com/");
-        driver.findElement(By.linkText("Register")).click();
-        driver.navigate().back();
-        System.out.println("Back to Home Page");
-        driver.navigate().refresh();
-        System.out.println("Refer the Home Page");
-        driver.navigate().forward();
-        System.out.println("Forward to register page");
-        driver.navigate().refresh();
-        System.out.println("Referesh the register page");
-
+        
+        //check WebElement isDisplayed () : isEnabled() : isSelected() 
+        WebElement searchStore = driver.findElement(By.xpath("//input[@placeholder='Search store']"));
+        System.out.println("Search Store field is Present: " + searchStore.isDisplayed() + " : " + searchStore.isEnabled()+ " : " +searchStore.isSelected());
+    
 	}
 
 }
